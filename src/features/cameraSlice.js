@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const cameraSlice = createSlice({
   name: "camera",
@@ -8,7 +8,7 @@ export const cameraSlice = createSlice({
 
   reducers: {
     setCameraImage: (state, action) => {
-      state.cameraImage += action.payload;
+      state.cameraImage = action.payload;
     },
     resetCameraImage: (state) => {
       state.cameraImage = null;
