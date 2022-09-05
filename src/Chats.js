@@ -10,7 +10,7 @@ function Chats() {
         <Avatar className="chats__avatar" />
         <div className="chats__search">
           <SearchIcon />
-          <input placeholder="friends" types="text" />
+          <input placeholder="Friends" types="text" />
           <ChatBubbleIcon className="chats__chatIcon" />
         </div>
       </div>
