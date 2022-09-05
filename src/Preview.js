@@ -46,7 +46,7 @@ function Preview() {
       () => {
         // Complete fucntion
         storage
-          .red("posts")
+          .ref("posts")
           .child(id)
           .getDownloadURL()
           .then((url) => {
