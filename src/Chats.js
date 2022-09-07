@@ -37,10 +37,11 @@ function Chats() {
           }) => (
             <Chat
               key={id}
-              profilePic={profilePic}
               username={username}
               timestamp={timestamp}
               imageUrl={imageUrl}
+              read={read}
+              profilePic={profilePic}
             />
           )
         )}

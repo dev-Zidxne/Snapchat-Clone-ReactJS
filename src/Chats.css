@@ -29,7 +29,7 @@
 }
 
 .chats__posts {
-  box-shadow: 1px -7px -6px rgba(0, 0, 0, 0.44);
+  box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
   height: 359px;
   margin-top: -9px;
   border-top-left-radius: 10px;
