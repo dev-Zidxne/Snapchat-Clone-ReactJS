@@ -4,6 +4,7 @@ import Preview from "./Preview";
 import "./App.css";
 import WebcamCapture from "./WebcamCapture";
 import Chats from "./Chats";
+import Chat from "./Chat";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
             <Route exact path="/" element={<WebcamCapture />}></Route>
             <Route exact path="/chats" element={<Chats />}></Route>
+            <Route exact path="/chats" element={<Chat />}></Route>
           </Routes>
         </div>
       </Router>
