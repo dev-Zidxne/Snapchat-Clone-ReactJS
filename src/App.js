@@ -16,7 +16,6 @@ function App() {
 
             <Route exact path="/" element={<WebcamCapture />}></Route>
             <Route exact path="/chats" element={<Chats />}></Route>
-            <Route exact path="/chats" element={<Chat />}></Route>
           </Routes>
         </div>
       </Router>

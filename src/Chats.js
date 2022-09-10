@@ -9,7 +9,7 @@ function Chats() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     db.collection("posts")
-      .orderBy("timestamp", "desc")
+      .orderBy("timeStamp", "desc")
       .onSnapshot((snapshot) =>
         setPosts(
           snapshot.docs.map((doc) => ({
@@ -33,12 +33,12 @@ function Chats() {
         {posts.map(
           ({
             id,
-            data: { profilePic, username, timestamp, imageUrl, read },
+            data: { profilePic, username, timeStamp, imageUrl, read },
           }) => (
             <Chat
               key={id}
               username={username}
-              timestamp={timestamp}
+              timeStamp={timeStamp}
               imageUrl={imageUrl}
               read={read}
               profilePic={profilePic}

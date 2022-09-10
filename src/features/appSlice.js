@@ -1,19 +1,28 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { selectCameraImage } from "./cameraSlice";
 
 export const appSlice = createSlice({
   name: "app",
   initialState: {
-    value: 0,
+    user: null,
+    selectedImage: null,
   },
 
   reducers: {
-    incrementByAmount: (state, action) => {
+    login: (state, action) => {
       state.value += action.payload;
+    },
+    logout: (state, action) => {
+      (state.selectedImage = state), action;
+    },
+    resetImage: (state) => {
+      state.selectedImage = null;
     },
   },
 });
 export const { incrementByAmount } = appSlice.actions;
 
-export const selectApp = (state) => state.app.value;
+export const selectUser = (state) => state.app.user;
+export const selectSelectedImage = (state) => state.app.selectedImage;
 
 export default appSlice.reducer;
