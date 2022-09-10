@@ -7,14 +7,28 @@ import TimeAgo from "javascript-time-ago";
 
 import en from "javascript-time-ago/locale/en.json";
 import ru from "javascript-time-ago/locale/ru.json";
+import { useDispatch } from "react-redux";
+import { selectImage } from "./features/appSlice";
+import { db } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(ru);
 
 function Chat({ id, username, timeStamp, read, imageUrl, profilePic }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const open = () => {
     if (!read) {
-      dispatch(selectImage);
+      dispatch(selectImage(imageUrl));
+      db.collection("posts").doc(id).set(
+        {
+          read: true,
+        },
+        { merge: true }
+      );
+
+      navigate("/chats/view");
     }
   };
   return (
