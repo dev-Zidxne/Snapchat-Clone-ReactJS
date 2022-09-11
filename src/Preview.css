@@ -2,11 +2,15 @@
   position: relative;
 }
 
+.preview > .capture {
+  border-radius: 35px;
+}
+
 .preview__close {
   cursor: pointer;
   position: absolute;
   top: 0;
-  margin: 5px;
+  margin: 12px;
   font-size: 18px;
   color: white;
 }
@@ -17,7 +21,7 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  margin: 12px;
 }
 
 .preview__toolbarRight > .MuiSvgIcon-root {
@@ -27,7 +31,7 @@
 }
 .preview__footer {
   position: absolute;
-  bottom: 25px;
+  bottom: 35px;
   right: -25px;
   transform: translate(-50%, 50%);
   background-color: yellow;

@@ -37,7 +37,7 @@ function Chat({ id, username, timeStamp, read, imageUrl, profilePic }) {
       <div className="chat__info">
         <h4>{username}</h4>
         <p>
-          Tap to view -{" "}
+          {!read && "Tap to view -"}{" "}
           <ReactTimeAgo
             date={new Date(timeStamp?.toDate()).toUTCString()}
             locale="en-US"

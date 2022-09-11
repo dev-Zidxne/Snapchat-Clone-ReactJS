@@ -16,11 +16,13 @@ import { v4 as uuid } from "uuid";
 
 import { db, storage } from "./firebase";
 import firebase from "firebase/compat/app";
+import { selectUser } from "./features/appSlice";
 
 function Preview() {
   const cameraImage = useSelector(selectCameraImage);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     if (!cameraImage) {
@@ -32,8 +34,8 @@ function Preview() {
     dispatch(resetCameraImage());
   };
 
+  const id = uuid();
   const sendPost = () => {
-    const id = uuid();
     const uploadTask = storage
       .ref(`posts/${id}`)
       .putString(cameraImage, "data_url");
@@ -54,7 +56,7 @@ function Preview() {
               imageUrl: url,
               username: "Zidane",
               read: false,
-              // profilePic,
+              profilePic: user.profilePic,
               timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
             navigate("/chats");
@@ -75,7 +77,7 @@ function Preview() {
         <CropIcon />
         <TimerIcon />
       </div>
-      <img src={cameraImage} alt="" />
+      <img src={cameraImage} alt="" className="capture" />
       <div onClick={sendPost} className="preview__footer">
         <h2>Send Now</h2>
         <SendIcon fontSize="small" className="preview__sendIcon" />

@@ -6,8 +6,8 @@ import { setCameraImage } from "./features/cameraSlice";
 import { useNavigate } from "react-router-dom";
 import "./WebcamCapture.css";
 const videoConstraints = {
-  width: 250,
-  height: 400,
+  width: 245,
+  height: 490,
   facingMode: "user",
 };
 
@@ -25,12 +25,14 @@ function WebcamCapture() {
   return (
     <div className="webcamCapture">
       <Webcam
+        className="webcam"
         audio={false}
         height={videoConstraints.height}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         width={videoConstraints.width}
         videoConstraints={videoConstraints}
+        onClick={navigate("/chats")}
       />
       <RadioButtonUncheckedIcon
         className="webcamCapture__button"

@@ -6,3 +6,22 @@
   background-color: #fefc01;
   height: 100vh;
 }
+
+.app__body {
+  background: url(https://www.vodafone.pt/content/dam/digital-eshop/equipamentos/telemoveis/apple/telemoveis-iphone-14-pro-gold-front.png/jcr:content/renditions/original)
+    no-repeat center;
+  background-size: contain;
+  height: 400px;
+  padding: 105px;
+}
+
+.app__bodyBackground {
+  /* background-color: #fefc01; */
+  height: 490px;
+  border-radius: 28px;
+}
+
+.app__logo {
+  object-fit: contain;
+  height: 100px;
+}

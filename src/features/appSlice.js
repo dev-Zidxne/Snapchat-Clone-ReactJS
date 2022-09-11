@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { selectCameraImage } from "./cameraSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const appSlice = createSlice({
   name: "app",

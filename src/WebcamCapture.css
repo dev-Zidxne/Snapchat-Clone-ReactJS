@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.webcamCapture > .webcam {
+  position: relative;
+
+  border-radius: 35px;
+}
+
 .webcamCapture__button {
   position: absolute;
   bottom: 0;
