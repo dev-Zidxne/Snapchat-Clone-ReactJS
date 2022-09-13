@@ -34,8 +34,9 @@ function Preview() {
     dispatch(resetCameraImage());
   };
 
-  const id = uuid();
   const sendPost = () => {
+    const id = uuid();
+
     const uploadTask = storage
       .ref(`posts/${id}`)
       .putString(cameraImage, "data_url");
