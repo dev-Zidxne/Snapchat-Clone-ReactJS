@@ -13,9 +13,8 @@ import { db } from "./firebase";
 import { useNavigate } from "react-router-dom";
 
 TimeAgo.addDefaultLocale(en);
-TimeAgo.addLocale(ru);
 
-function Chat({ id, username, timeStamp, read, imageUrl, profilePic }) {
+function Chat({ id, username, timestamp, read, imageUrl, profilePic }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const open = () => {
@@ -37,14 +36,10 @@ function Chat({ id, username, timeStamp, read, imageUrl, profilePic }) {
       <div className="chat__info">
         <h4>{username}</h4>
         <p>
-          {!read && "Tap to view -"}{" "}
-          <ReactTimeAgo
-            date={new Date(timeStamp?.toDate()).toUTCString()}
-            locale="en-US"
-          />
+          {!read && "Tap to view - "}
+          <ReactTimeAgo date={new Date(timestamp?.toDate())} />
         </p>
       </div>
-
       {!read && <StopCircleIcon className="chat__readIcon" />}
     </div>
   );

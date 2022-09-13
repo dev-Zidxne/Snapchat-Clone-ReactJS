@@ -5,7 +5,7 @@
 .webcamCapture > .webcam {
   position: relative;
 
-  border-radius: 35px;
+  border-radius: 8px 8px 35px 35px;
 }
 
 .webcamCapture__button {

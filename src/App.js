@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Preview from "./Preview";
 import "./App.css";
 import WebcamCapture from "./WebcamCapture";
 import Chats from "./Chats";
-import Chat from "./Chat";
+
 import ChatView from "./ChatView";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/appSlice";
@@ -17,6 +18,7 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
+        console.log("yes auth");
         dispatch(
           login({
             username: authUser.displayName,
@@ -43,14 +45,14 @@ function App() {
             <div className="app__body">
               <div className="app__bodyBackground">
                 <Routes>
-                  <Route exact path="/" element={<WebcamCapture />}></Route>
-                  <Route exact path="/chats" element={<Chats />}></Route>
-                  <Route exact path="/preview" element={<Preview />}></Route>
                   <Route
                     exact
                     path="/chats/view"
                     element={<ChatView />}
                   ></Route>
+                  <Route exact path="/preview" element={<Preview />}></Route>
+                  <Route exact path="/chats" element={<Chats />}></Route>
+                  <Route exact path="/" element={<WebcamCapture />}></Route>
                 </Routes>
               </div>
             </div>

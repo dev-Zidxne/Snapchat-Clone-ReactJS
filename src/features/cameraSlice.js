@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+// import { fetchCount } from './counterAPI';
 
 export const cameraSlice = createSlice({
   name: "camera",
   initialState: {
     cameraImage: null,
   },
-
   reducers: {
     setCameraImage: (state, action) => {
       state.cameraImage = action.payload;
@@ -15,6 +15,7 @@ export const cameraSlice = createSlice({
     },
   },
 });
+
 export const { setCameraImage, resetCameraImage } = cameraSlice.actions;
 
 export const selectCameraImage = (state) => state.camera.cameraImage;

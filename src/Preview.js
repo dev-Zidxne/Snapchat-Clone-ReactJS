@@ -54,10 +54,10 @@ function Preview() {
           .then((url) => {
             db.collection("posts").add({
               imageUrl: url,
-              username: "Zidane",
+              username: user.username,
               read: false,
               profilePic: user.profilePic,
-              timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
             navigate("/chats");
           });

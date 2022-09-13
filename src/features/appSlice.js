@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+// import { fetchCount } from './counterAPI';
 
 export const appSlice = createSlice({
   name: "app",
@@ -6,7 +7,6 @@ export const appSlice = createSlice({
     user: null,
     selectedImage: null,
   },
-
   reducers: {
     login: (state, action) => {
       state.user = action.payload;
@@ -22,9 +22,9 @@ export const appSlice = createSlice({
     },
   },
 });
+
 export const { login, logout, selectImage, resetImage } = appSlice.actions;
 
 export const selectUser = (state) => state.app.user;
 export const selectSelectedImage = (state) => state.app.selectedImage;
-
 export default appSlice.reducer;

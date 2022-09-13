@@ -32,7 +32,6 @@ function WebcamCapture() {
         screenshotFormat="image/jpeg"
         width={videoConstraints.width}
         videoConstraints={videoConstraints}
-        onClick={navigate("/chats")}
       />
       <RadioButtonUncheckedIcon
         className="webcamCapture__button"

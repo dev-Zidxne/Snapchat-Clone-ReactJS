@@ -18,15 +18,16 @@ function Login() {
           })
         );
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        alert(error.messages);
+      });
   };
-
   return (
     <div className="login">
       <div className="login__container">
         <img src="https://scx1.b-cdn.net/csz/news/800a/2017/1-snapchat.jpg" />
         <Button variant="outlined" onClick={signIn}>
-          Sign In
+          Sign in
         </Button>
       </div>
     </div>

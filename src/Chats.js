@@ -10,14 +10,15 @@ import { useDispatch, useSelector } from "react-redux";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { useNavigate } from "react-router-dom";
 import { resetCameraImage } from "./features/cameraSlice";
-function Chats() {
+
+const Chats = () => {
   const [posts, setPosts] = useState([]);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     db.collection("posts")
-      .orderBy("timeStamp", "desc")
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setPosts(
           snapshot.docs.map((doc) => ({
@@ -50,12 +51,13 @@ function Chats() {
         {posts.map(
           ({
             id,
-            data: { profilePic, username, timeStamp, imageUrl, read },
+            data: { profilePic, username, timestamp, imageUrl, read },
           }) => (
             <Chat
               key={id}
+              id={id}
               username={username}
-              timeStamp={timeStamp}
+              timestamp={timestamp}
               imageUrl={imageUrl}
               read={read}
               profilePic={profilePic}
@@ -70,6 +72,6 @@ function Chats() {
       />
     </div>
   );
-}
+};
 
 export default Chats;

@@ -19,11 +19,11 @@ function ChatView() {
   };
   return (
     <div className="chatView">
-      <img src={selectedImage} onClick={exit} alt="" />
+      <img src={selectedImage} onClick={exit} alt="" className="capture" />
       <div className="chatView_timer">
         <CountdownCircleTimer
           isPlaying
-          duration={10}
+          duration={5}
           strokeWidth={6}
           size={50}
           colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
