@@ -16,7 +16,8 @@
 }
 
 .app__bodyBackground {
-  /* background-color: #fefc01; */
+  justify-content: center;
+  background-color: white;
   height: 490px;
   border-radius: 28px;
 }
